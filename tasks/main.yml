@@ -1,2 +1,3 @@
 ---
-# tasks file for openshift_clients
+- name: Install OpenShift clients
+  ansible.builtin.include_tasks: install.yml

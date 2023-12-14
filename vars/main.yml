@@ -1,2 +1,16 @@
 ---
-# vars file for openshift_clients
+system: "{{ ansible_system | lower }}"
+arch: "{{ 'amd64' if ansible_architecture == 'x86_64' else ansible_architecture }}"
+
+archive_regex: '.*\.tar\.gz$'
+
+download_urls:
+  oc: "{{ openshift_clients_mirror_url }}/ocp/{{ openshift_clients_ocp_version }}/openshift-client-{{ system }}.tar.gz"
+  oc-mirror: "{{ openshift_clients_mirror_url }}/ocp/{{ openshift_clients_ocp_version }}/oc-mirror.tar.gz"
+  openshift-install: "{{ openshift_clients_mirror_url }}/ocp/{{ openshift_clients_ocp_version }}/openshift-install-{{ system }}.tar.gz"
+  butane: "{{ openshift_clients_mirror_url }}/butane/{{ openshift_clients_helm_version }}/butane"
+  helm: "{{ openshift_clients_mirror_url }}/helm/{{ openshift_clients_helm_version }}/helm-{{ system }}-{{ arch }}.tar.gz"
+  odo: "{{ openshift_clients_mirror_url }}/odo/{{ openshift_clients_odo_version }}/odo-{{ system }}-{{ arch }}.tar.gz"
+  tkn: "{{ openshift_clients_mirror_url }}/pipelines/{{ openshift_clients_tkn_version }}/tkn-{{ system }}-{{ arch }}.tar.gz"
+  kam: "{{ openshift_clients_mirror_url }}/kam/{{ openshift_clients_kam_version }}/kam-{{ system }}-{{ arch }}.tar.gz"
+  opm: "{{ openshift_clients_mirror_url }}/ocp/{{ openshift_clients_ocp_version }}/opm-{{ system }}.tar.gz"

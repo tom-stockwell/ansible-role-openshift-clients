@@ -1,2 +1,31 @@
 ---
-# defaults file for openshift_clients
+openshift_clients:
+  - oc
+  - oc-mirror
+  - openshift-install
+  - butane
+  - helm
+  - odo
+  - tkn
+  - kam
+  - opm
+
+openshift_clients_force_reinstall: false
+openshift_clients_mirror_url: https://mirror.openshift.com/pub/openshift-v4/clients
+
+openshift_clients_ocp_version: fast
+openshift_clients_odo_version: latest
+openshift_clients_butane_version: latest
+openshift_clients_tkn_version: latest
+openshift_clients_kam_version: latest
+openshift_clients_helm_version: latest
+
+openshift_clients_install_dir: /usr/local/bin
+openshift_clients_install_dir_mode: '0755'
+
+openshift_clients_owner: root
+openshift_clients_group: root
+openshift_clients_mode: '0755'
+
+openshift_clients_become: true
+openshift_clients_become_user: root
