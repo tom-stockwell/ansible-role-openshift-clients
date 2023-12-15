@@ -1,10 +1,4 @@
 ---
-- name: Create installation directory
-  ansible.builtin.file:
-    state: directory
-    path: "{{ openshift_clients_install_dir }}"
-    mode: "{{ openshift_clients_install_dir_mode }}"
-
 - name: Download & install clients
   ansible.builtin.include_tasks: install-client.yml
   vars:

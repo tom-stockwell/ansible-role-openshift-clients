@@ -21,7 +21,6 @@ openshift_clients_kam_version: latest
 openshift_clients_helm_version: latest
 
 openshift_clients_install_dir: /usr/local/bin
-openshift_clients_install_dir_mode: '0755'
 
 openshift_clients_owner: root
 openshift_clients_group: root
